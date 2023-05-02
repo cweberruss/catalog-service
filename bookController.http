@@ -1,0 +1,12 @@
+
+###
+POST http://localhost:9001/books
+Accept: *
+Content-Type: application/json
+
+{
+  "author": "Jon Snow",
+  "title": "",
+  "isbn": "123ABC456Z",
+  "price": 9.90
+}
