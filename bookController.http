@@ -3,6 +3,9 @@
 GET http://localhost:9002/
 
 ###
+POST http://localhost:9002/actuator/refresh
+
+###
 POST http://localhost:9002/books
 Accept: *
 Content-Type: application/json
