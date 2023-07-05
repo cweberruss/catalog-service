@@ -1,6 +1,9 @@
 
 ###
-POST http://localhost:9001/books
+GET http://localhost:9002/
+
+###
+POST http://localhost:9002/books
 Accept: *
 Content-Type: application/json
 
