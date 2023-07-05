@@ -10,6 +10,13 @@ sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
+//    maven {
+//        url "https://repo.spring.io/release"
+//    }
+}
+
+bootRun {
+    systemProperty 'spring.profiles.active', 'testdata'
 }
 
 configurations {
