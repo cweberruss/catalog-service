@@ -3,7 +3,7 @@
 GET http://localhost:9002/
 
 ###
-POST http://localhost:9002/actuator/refresh
+GET http://localhost:9002/books
 
 ###
 POST http://localhost:9002/books
@@ -16,3 +16,6 @@ Content-Type: application/json
   "isbn": "123ABC456Z",
   "price": 9.90
 }
+
+###
+POST http://localhost:9002/actuator/refresh
