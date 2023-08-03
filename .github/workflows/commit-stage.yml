@@ -22,6 +22,10 @@ jobs:
           distribution: temurin
           java-version: 17 
           cache: gradle
+      - name: Build, unit tests and integration tests
+        run: |
+          chmod +x gradlew
+          ./gradlew build
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
@@ -34,10 +38,6 @@ jobs:
         if: success() || failure()
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
-      - name: Build, unit tests and integration tests 
-        run: | 
-          chmod +x gradlew
-          ./gradlew build
 
   package:
     name: Package and Publish
@@ -81,5 +81,4 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push container image
-        run: |
-          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
